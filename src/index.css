@@ -1,23 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
   --font-serif: "Cormorant Garamond", serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-
+  
   --color-brand-purple: #2D1B69;
   --color-brand-gold: #C5A059;
   --color-brand-teal: #008080;
 }
 
-@layer utilities {
-  .premium-shadow {
-    box-shadow: 0 10px 40px -10px rgba(45, 27, 105, 0.08), 0 0 20px rgba(0, 0, 0, 0.02);
-  }
+body {
+  @apply bg-[#FDFCFB] text-brand-purple antialiased;
 }
 
-body {
-  @apply antialiased selection:bg-brand-gold/30;
+.premium-shadow {
+  box-shadow: 0 10px 40px -10px rgba(45, 27, 105, 0.1);
+}
+
+.glass-card {
+  @apply bg-white/70 backdrop-blur-md border border-white/20;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.hover-lift {
+  @apply transition-transform duration-300 hover:-translate-y-1;
 }
